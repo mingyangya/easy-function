@@ -1,0 +1,30 @@
+{
+  "name": "easy-function",
+  "title": "easy-function",
+  "version": "0.0.1",
+  "description": "简单、实用的方法",
+  "author": {
+    "name": "haomingyang",
+    "url": "https://github.com/haochn"
+  },
+  "keywords": [
+    "function"
+  ],
+  "main": "src/index.js",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/haochn/easy-function"
+    }
+  ],
+  "scripts": {
+    "release": "babel src/index.js --out-file release/easy-function.js",
+    "example":"http-server -p 8888 "
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {}
+}
