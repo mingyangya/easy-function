@@ -2,7 +2,7 @@
   "name": "easy-function",
   "title": "easy-function",
   "version": "0.0.1",
-  "description": "简单、实用的方法",
+  "description": "简单、实用的javascript方法",
   "author": {
     "name": "haomingyang",
     "url": "https://github.com/haochn"
@@ -18,13 +18,17 @@
     }
   ],
   "scripts": {
+    "test": "node test/index.js",
     "release": "babel src/index.js --out-file release/easy-function.js",
-    "example":"http-server -p 8888 "
+    "example": "http-server -p 8888 "
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "http-server": "^0.11.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "user": "0.0.0"
+  }
 }
