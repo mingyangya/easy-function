@@ -10,7 +10,7 @@
   "keywords": [
     "function"
   ],
-  "main": "src/index.js",
+  "main": "release/easy-function.js",
   "repositories": [
     {
       "type": "git",
@@ -18,7 +18,7 @@
     }
   ],
   "scripts": {
-    "test": "node test/index.js",
+    "test": "node --inspect test/index.js",
     "release": "babel src/index.js --out-file release/easy-function.js",
     "example": "http-server -p 8888 "
   },
