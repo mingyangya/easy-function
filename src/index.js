@@ -29,10 +29,10 @@
             return _a + _b;
         }
 
-        static getNowTime(hashour = false, symbol = "-") {
+        static getNowTime(hasHour = false, symbol = "-") {
             /**
              * 获取当前时间，并格式化
-             * @param {boolon} {hashour} 是否显示小时以下的详细信息
+             * @param {boolean} {hasHour} 是否显示小时以下的详细信息
              * @param {string} {symbol} 字符间的间隔符，默认"-"
              * @returns {string} {timeString} 格式化后的时间戳
              * */
@@ -42,17 +42,17 @@
                 year = date.getFullYear(),   // 年份
                 month = date.getMonth() + 1, // 月份
                 day = date.getDate();        // 日
-            month > 9 ? month : '0' + month;
-            day > 9 ? day : '0' + day;
+            month = month > 9 ? month : '0' + month;
+            day = day > 9 ? day : '0' + day;
             timeString = year + symbol + month + symbol + day;
-            if (hashour) {
+            if (hasHour) {
                 let
                     hour = date.getHours(),     // 小时
                     minute = date.getMinutes(), // 分钟
                     second = date.getSeconds(); // 秒
-                hour > 9 ? hour : '0' + hour;
-                minute > 9 ? minute : '0' + minute;
-                second > 9 ? second : '0' + second;
+                hour = hour > 9 ? hour : '0' + hour;
+                minute = minute > 9 ? minute : '0' + minute;
+                second = second > 9 ? second : '0' + second;
                 timeString += " " + hour + ":" + minute + ":" + second;
             }
             return timeString;
@@ -61,6 +61,7 @@
         static numberToWord(param) {
             /**
              * 阿拉伯数字(0-9,10,100,1000,10000,100000000)转化为简体汉字(零-九,十,百,千,万,亿)
+             * @param {string|number} {param} 要转化的数字或汉字
              * @returns {string|number} {result} 阿拉伯数字或者简体汉字
              * */
             let result;
@@ -102,7 +103,22 @@
             result = filterItem ? filterItem.v : param;
             return result;
         }
+
+        static getRandom(min = 0, max = 1, integer = false) {
+            /**
+             * 获取min,max间的随机数
+             * @param {number} {min} 最小数
+             * @param {number} {max} 最大数
+             * @param {boolean} {integer} 随机整数
+             * @returns {number} {result} 生成的随机数
+             * */
+            if (!Number.isInteger(min)||!Number.isInteger(max)) throw "输入合法的数字区间！";
+            let random = Math.random() * (max - min) + min;
+            return integer ? Math.round(random) : random;
+        }
+
     }
+
     return EasyFunction;
 });
 
