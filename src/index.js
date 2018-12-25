@@ -16,19 +16,6 @@
             this.opt = opt;
         }
 
-        static sum(a = 0, b = 0) {
-            /**
-             * 两个数字相加
-             * @param {number} {a} 数字a
-             * @param {number} {b} 数字b
-             * @returns {number} {a+b} a与b的和
-             * */
-            const
-                _a = isNaN(a) ? 0 : parseInt(a),
-                _b = isNaN(b) ? 0 : parseInt(b);
-            return _a + _b;
-        }
-
         static getNowTime(hasHour = false, symbol = "-") {
             /**
              * 获取当前时间，并格式化
@@ -112,9 +99,23 @@
              * @param {boolean} {integer} 随机整数
              * @returns {number} {result} 生成的随机数
              * */
-            if (!Number.isInteger(min)||!Number.isInteger(max)) throw "输入合法的数字区间！";
+            if (!Number.isInteger(min) || !Number.isInteger(max)) throw "输入合法的数字区间！";
             let random = Math.random() * (max - min) + min;
             return integer ? Math.round(random) : random;
+        }
+
+        static typeOf(param) {
+            /**
+             * javascript数据类型判断
+             * @param {*} {param} 任何类型的变量
+             * @returns {string} {result} 变量的数据类型
+             * */
+
+            const typeStr = Object.prototype.toString.call(param);
+
+            //[object String]
+            const result = typeStr.slice(8, -1).toLowerCase(); // 转化为小写
+            return result;
         }
 
     }

@@ -25,30 +25,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         _createClass(EasyFunction, null, [{
-            key: "sum",
-            value: function sum() {
-                var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-                var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-                /**
-                 * 两个数字相加
-                 * @param {number} {a} 数字a
-                 * @param {number} {b} 数字b
-                 * @returns {number} {a+b} a与b的和
-                 * */
-                var _a = isNaN(a) ? 0 : parseInt(a),
-                    _b = isNaN(b) ? 0 : parseInt(b);
-                return _a + _b;
-            }
-        }, {
             key: "getNowTime",
             value: function getNowTime() {
-                var hashour = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+                var hasHour = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
                 var symbol = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "-";
 
                 /**
                  * 获取当前时间，并格式化
-                 * @param {boolon} {hashour} 是否显示小时以下的详细信息
+                 * @param {boolean} {hasHour} 是否显示小时以下的详细信息
                  * @param {string} {symbol} 字符间的间隔符，默认"-"
                  * @returns {string} {timeString} 格式化后的时间戳
                  * */
@@ -60,18 +44,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 month = date.getMonth() + 1,
                     // 月份
                 day = date.getDate(); // 日
-                month > 9 ? month : '0' + month;
-                day > 9 ? day : '0' + day;
+                month = month > 9 ? month : '0' + month;
+                day = day > 9 ? day : '0' + day;
                 timeString = year + symbol + month + symbol + day;
-                if (hashour) {
+                if (hasHour) {
                     var hour = date.getHours(),
                         // 小时
                     minute = date.getMinutes(),
                         // 分钟
                     second = date.getSeconds(); // 秒
-                    hour > 9 ? hour : '0' + hour;
-                    minute > 9 ? minute : '0' + minute;
-                    second > 9 ? second : '0' + second;
+                    hour = hour > 9 ? hour : '0' + hour;
+                    minute = minute > 9 ? minute : '0' + minute;
+                    second = second > 9 ? second : '0' + second;
                     timeString += " " + hour + ":" + minute + ":" + second;
                 }
                 return timeString;
@@ -81,6 +65,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: function numberToWord(param) {
                 /**
                  * 阿拉伯数字(0-9,10,100,1000,10000,100000000)转化为简体汉字(零-九,十,百,千,万,亿)
+                 * @param {string|number} {param} 要转化的数字或汉字
                  * @returns {string|number} {result} 阿拉伯数字或者简体汉字
                  * */
                 var result = void 0;
@@ -89,6 +74,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     return value.k === param;
                 });
                 result = filterItem ? filterItem.v : param;
+                return result;
+            }
+        }, {
+            key: "getRandom",
+            value: function getRandom() {
+                var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+                var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+                var integer = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+                /**
+                 * 获取min,max间的随机数
+                 * @param {number} {min} 最小数
+                 * @param {number} {max} 最大数
+                 * @param {boolean} {integer} 随机整数
+                 * @returns {number} {result} 生成的随机数
+                 * */
+                if (!Number.isInteger(min) || !Number.isInteger(max)) throw "输入合法的数字区间！";
+                var random = Math.random() * (max - min) + min;
+                return integer ? Math.round(random) : random;
+            }
+        }, {
+            key: "typeOf",
+            value: function typeOf(param) {
+                /**
+                 * javascript数据类型判断
+                 * @param {*} {param} 任何类型的变量
+                 * @returns {string} {result} 变量的数据类型
+                 * */
+
+                var typeStr = Object.prototype.toString.call(param);
+
+                //[object String]
+                var result = typeStr.slice(8, -1).toLowerCase(); // 转化为小写
                 return result;
             }
         }]);

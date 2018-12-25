@@ -2,23 +2,21 @@
 ## 介绍
 简单、常用的方法
 
+- 文档：[Document](./doc/use/README.md)
 - 源码：[https://github.com/haochn/easy-function](https://github.com/haochn/easy-function) （欢迎 star）
 
 ## 下载
 
 - 直接下载：[https://github.com/haochn/easy-function/releases](https://github.com/haochn/easy-function/releases)
 - 使用`npm`下载：`npm install easy-function`
-- 使用CDN：
+- 使用CDN：[https://unpkg.com/easy-function/release/easy-function.js](https://unpkg.com/easy-function/release/easy-function.js)
 
 
 ## 使用
-```javascript
-var easyFun=new EasyFunction();
-var sum=easyFun.sum(1,2);
-alert(sum);
-```
 
-## 运行 demo
+```javascript
+var easyFun=EasyFunction;
+```
 
 ### 提问
 
