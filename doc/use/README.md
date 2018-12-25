@@ -63,4 +63,28 @@ easyFun.typeOf({});
 // object
 ```
 
+## arrUniq
+给定一个数组，去除其中重复的元素。
+
+```javascript
+easyFun.filterArr([2, 9, 6, 2, 5, 2]);
+//[2, 9, 6, 5]
+```
+## randomString
+生成随机的字符串（包含数字，大小写字母）
+
+```javascript
+easyFun.randomString();
+// F8IrZ2joV4otC6zN
+```
+## sortArr
+对数组进行排序（类型1：增序，类型2:降序）
+
+```javascript
+easyFun.sortArr([2,5,1,0]);
+// [0,1,2,5]
+```
+
+
+
 

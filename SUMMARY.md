@@ -6,6 +6,9 @@
     * [numberToWord](doc/use/numberToWord.md)
     * [getRandom](doc/use/getRandom.md)
     * [typeOf](doc/use/typeOf.md)
+    * [randomString](doc/use/randomString.md)
+    * [sortArr](doc/use/sortArr.md)
+    * [arrUniq](doc/use/arrUniq.md)
 * [二次开发](doc/dev/README.md)
     * [开发1](doc/dev/dev1.md)
 

@@ -102,11 +102,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                  * @param {*} {param} 任何类型的变量
                  * @returns {string} {result} 变量的数据类型
                  * */
-
                 var typeStr = Object.prototype.toString.call(param);
-
                 //[object String]
                 var result = typeStr.slice(8, -1).toLowerCase(); // 转化为小写
+                return result;
+            }
+        }, {
+            key: "randomString",
+            value: function randomString() {
+                var len = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 16;
+
+                /**
+                 * 生成随机的字符串（包含数字，大小写字母）
+                 * @param {number} {len} 字符串的长度
+                 * @results {string} {result} 随机字符串
+                 * */
+                var result = '',
+                    str = 'abcefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+                    wordLen = str.length;
+                for (var i = 0; i < len; i++) {
+                    result += str.charAt(Math.floor(Math.random() * wordLen));
+                }
                 return result;
             }
         }]);

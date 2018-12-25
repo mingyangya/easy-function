@@ -110,12 +110,50 @@
              * @param {*} {param} 任何类型的变量
              * @returns {string} {result} 变量的数据类型
              * */
-
             const typeStr = Object.prototype.toString.call(param);
-
             //[object String]
             const result = typeStr.slice(8, -1).toLowerCase(); // 转化为小写
             return result;
+        }
+
+        static randomString(len = 16) {
+            /**
+             * 生成随机的字符串（包含数字，大小写字母）
+             * @param {number} {len} 字符串的长度
+             * @results {string} {result} 随机字符串
+             * */
+            let result = '',
+                str = 'abcefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+                wordLen = str.length;
+            for (let i = 0; i < len; i++) {
+                result += str.charAt(Math.floor(Math.random() * wordLen));
+            }
+            return result;
+        }
+        static sortArr (arr = [], type = 1)  {
+            /**
+             * 对数组排序
+             * @param {array} {arr} 排序的数组
+             * @param {type} {1|2} 增序|降序
+             * @returns {array} {resultArr} 排序后的数组
+             * */
+            let resultArr = [].concat(arr);//新的数组
+            resultArr.sort(function(a, b) {
+                if (type === 2) {
+                    return b - a;
+                } else {
+                    return a - b;
+                }
+            });
+            return resultArr;
+        }
+        static arrUniq = (arr = []) => {
+            /**
+             * 数组去重
+             * @param {array} {arr} 去重的数组
+             * @returns {array} {result} 去重后的数组
+             * */
+            return Array.from(new Set(arr));
         }
 
     }
