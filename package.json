@@ -7,6 +7,7 @@
     "name": "haomingyang",
     "url": "https://github.com/haochn"
   },
+  "license": "MIT",
   "keywords": [
     "function"
   ],
@@ -24,11 +25,10 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.2.5",
+    "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "http-server": "^0.11.1"
   },
-  "dependencies": {
-    "user": "0.0.0"
-  }
+  "dependencies": {}
 }

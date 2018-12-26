@@ -147,7 +147,7 @@
             });
             return resultArr;
         }
-        static arrUniq = (arr = []) => {
+        static arrUniq(arr = []) {
             /**
              * 数组去重
              * @param {array} {arr} 去重的数组
