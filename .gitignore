@@ -30,7 +30,6 @@ node_modules
 # webStorm idea
 .idea
 
-
 # electron package
 app
 dist
