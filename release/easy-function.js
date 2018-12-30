@@ -10,7 +10,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
         module.exports = factory(); // common.js
     } else if (typeof define === 'function') {
-        define(factory()); //amd规范 ,require.js
+        define(function () {
+            return factory();
+        }); //amd规范 ,require.js
     } else {
         global.EasyFunction = factory(); //浏览器环境
     }

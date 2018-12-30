@@ -8,15 +8,25 @@
     <title>easy-function</title>
 </head>
 <body>
-<script src="../release/easy-function.js"></script>
+    
+<!-- <script src="../release/easy-function.js"></script>
 <script>
     var easyFun =EasyFunction;
-    var sum = easyFun.sum(1, 2);
     //console.log((sum));
     var numberToWord=easyFun.numberToWord(85296);
     console.log(numberToWord);
     var c=class a{};
     console.log(easyFun.typeOf(c));
+</script> -->
+
+<script src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+<script>
+
+require(['../release/easy-function.js'],function(easyFun){
+        console.log(easyFun);
+
+        console.log(easyFun.getNowTime());
+    })
 </script>
 </body>
 </html>
