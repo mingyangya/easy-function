@@ -54,7 +54,6 @@
      * @returns {string|number} {result} 阿拉伯数字或者简体汉字
      * */
     numberToWord (param) {
-      let result
       const numbers = [
         { k: 0, v: "零" },
         { k: 1, v: "一" },
