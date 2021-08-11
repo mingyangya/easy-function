@@ -161,7 +161,7 @@
     }
   }
 
-  return easyFunction
+  return new easyFunction ()
 })
 
 

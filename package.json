@@ -20,10 +20,8 @@
   ],
   "scripts": {
     "test": "node --inspect test/index.js",
-    "release:test": "babel src/index.js --out-file release/easy-function.js",
-    "release": "babel src --out-file release/easy-function.js",
-    "example": "http-server -p 8888",
-    "jsdoc": "jsdoc src/index.js"
+    "release": "babel src/index.js --out-file release/easy-function.js",
+    "example": "http-server -p 8888 -d false -o /example/index.html"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -31,8 +29,7 @@
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^6.8.0",
-    "http-server": "^0.11.1",
-    "jsdoc": "^3.6.7"
+    "http-server": "^0.12.1"
   },
   "dependencies": {}
 }
