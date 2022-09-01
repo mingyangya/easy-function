@@ -1,32 +1,27 @@
-<!doctype html>
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>easy-function</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css">
 </head>
 <body>
+  <section>
+    <h2>umd引入</h2>
+    <code class="code" language="javascript">
+      const add = EasyFunction.add(3, 4)
+      // add => 7
+    </code>
+  </section>
 
-<!-- <script src="../release/easy-function.js"></script>
-<script>
-    var easyFun =EasyFunction;
-    //console.log((sum));
-    var numberToWord=easyFun.numberToWord(85296);
-    console.log(numberToWord);
-    var c=class a{};
-    console.log(easyFun.typeOf(c));
-</script> -->
-
-<script src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
-<script>
-
-require(['../release/easy-function.js'], function(easyFun){
-  console.log(easyFun);
-
-  console.log(easyFun.getNowTime());
-})
-</script>
+  <script src="../dist/dist.umd.js" class="umd"></script>
+  <script class="umd">
+    window.onload = () => {
+      console.log(EasyFunction)
+      console.log(EasyFunction.add(3, 4))
+    }
+  </script>
 </body>
 </html>

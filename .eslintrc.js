@@ -1,22 +1,13 @@
-// http://eslint.org/docs/user-guide/configuring
-
 module.exports = {
-  root: true,
-
-  parserOptions: {
-    parser: 'babel-eslint'
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-
-  env: {
-    browser: true,
-    node: true,
-    commonjs: true,
-    amd: true,
-    es6: true
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 13
   },
-
-  // add your custom rules here
-  rules: {
+  "rules": {
     'semi': [1, 'never'], // 结尾的分号
     'space-in-parens': 1, // 函数参数之间的空格
     'space-before-function-paren': 1, // 函数参数前的空格
@@ -31,9 +22,11 @@ module.exports = {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
+    'prefer-const': 0,
+    'prefer-promise-reject-errors': 0,
     'generator-star-spacing': 0,
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'standard/no-callback-literal': 0
   }
-}
-
-
+};

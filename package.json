@@ -4,8 +4,8 @@
   "version": "0.0.3",
   "description": "简单、实用的javascript方法",
   "author": {
-    "name": "haomingyang",
-    "url": "https://github.com/haochn"
+    "name": "mingyangya",
+    "url": "https://github.com/mingyangya"
   },
   "license": "MIT",
   "keywords": [
@@ -15,21 +15,25 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/haochn/easy-function"
+      "url": "https://github.com/mingyangya/easy-function"
     }
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
-    "test": "node --inspect test/index.js",
-    "release": "babel src/index.js --out-file release/easy-function.js",
-    "example": "http-server -p 8888 -d false -o /example/index.html"
+    "test": "node example/index.node.js",
+    "build": "rollup -c",
+    "example": "http-server -p 8888 -d false -o /example/index.html",
+    "jsdoc": "jsdoc -c jsdoc.conf.json",
+    "docs": "jsdoc2md src/utils/index.js > api.md",
+    "eslint": "eslint src --fix --ext .ts,.tsx,.js "
   },
-  "devDependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^6.8.0",
-    "http-server": "^0.12.1"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^8.23.0",
+    "http-server": "^14.1.1",
+    "jsdoc": "^3.6.11",
+    "jsdoc-to-markdown": "^7.1.1",
+    "rollup": "^2.78.1"
+  }
 }
