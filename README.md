@@ -7,7 +7,7 @@
 
 ## 下载
 
-- 直接下载：[https://github.com/  mingyangya/easy-function/releases](https://github.com/  mingyangya/easy-function/releases)
+- 直接下载：[https://github.com/mingyangya/easy-function/releases](https://github.com/  mingyangya/easy-function/releases)
 - 使用`npm`下载：`npm install easy-function`
 - 使用CDN：[https://unpkg.com/easy-function/release/easy-function.js](https://unpkg.com/easy-function/release/easy-function.js)
 
@@ -26,6 +26,6 @@ var easyFun=EasyFunction;
 
 ## 关于作者
 
-- 关注作者的博客 
+- 关注作者的博客
 - 学习作者的教程
 
