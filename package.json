@@ -22,7 +22,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "test": "node example/index.node.js",
+    "test": "jest",
     "build": "rollup -c",
     "example": "http-server -p 8888 -d false -o /example/index.html",
     "jsdoc": "jsdoc -c jsdoc.conf.json",
@@ -35,5 +35,11 @@
     "jsdoc": "^3.6.11",
     "jsdoc-to-markdown": "^7.1.1",
     "rollup": "^2.78.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-jest": "^29.0.1",
+    "jest": "^29.0.1"
   }
 }
