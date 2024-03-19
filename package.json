@@ -12,6 +12,8 @@
     "function"
   ],
   "main": "release/easy-function.js",
+  "module": "release/easy-function.esm.js",
+  "browser": "release/easy-function.umd.js",
   "repositories": [
     {
       "type": "git",
@@ -20,16 +22,18 @@
   ],
   "scripts": {
     "test": "node --inspect test/index.js",
+    "build": "rollup -c",
     "release": "babel src/index.js --out-file release/easy-function.js",
     "example": "http-server -p 8888 -d false -o /example/index.html"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.24.1",
+    "@babel/preset-env": "^7.24.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "eslint": "^6.8.0",
-    "http-server": "^0.12.1"
-  },
-  "dependencies": {}
+    "http-server": "^0.12.1",
+    "rollup": "^2.78.0"
+  }
 }

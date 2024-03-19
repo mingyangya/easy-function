@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 获取当前时间，并格式化
  * @param {boolean} {hasHour} 是否显示小时以下的详细信息
@@ -150,10 +146,4 @@ function arrUniq(arr = []) {
   return Array.from(new Set(arr))
 }
 
-exports.arrUniq = arrUniq;
-exports.getNowTime = getNowTime;
-exports.getRandom = getRandom;
-exports.numberToWord = numberToWord;
-exports.randomString = randomString;
-exports.sortArr = sortArr;
-exports.typeOf = typeOf;
+export { arrUniq, getNowTime, getRandom, numberToWord, randomString, sortArr, typeOf };
