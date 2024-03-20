@@ -4,47 +4,46 @@ import pkg from './package.json';
 import babel from '@rollup/plugin-babel';
 
 export default [
-  // browser-friendly UMD build
+  // ES module
   {
     input: 'src/index.js',
     output: {
-      name: pkg.name,
-      file: pkg.browser,
-      format: 'umd',
-      // exports: 'named'
+      file: pkg.main,
+      format: 'es',
+      exports: 'named'
     },
     plugins: [
       resolve(), // so Rollup can find `ms`
-      commonjs() // so Rollup can convert `ms` to an ES module
+      // @see https://www.rollupjs.com/tools/#rollupplugin-node-resolve
       // babel({ babelHelpers: 'bundled' })
+      commonjs() // so Rollup can convert `ms` to an ES module
     ]
   },
 
-  // CommonJS (for Node) and ES module (for bundlers) build.
-  // (We could have three entries in the configuration array
-  // instead of two, but it's quicker to generate multiple
-  // builds from a single configuration where possible, using
-  // an array for the `output` option, where we can specify
-  // `file` and `format` for each target)
+
   {
     input: 'src/index.js',
-    external: ['ms'],
     output: [
+      // CommonJS (for Node)
       {
-        file: pkg.main,
+        file: pkg.cjs,
         format: 'cjs',
         // exports: 'named'
       },
+      // browser-friendly UMD build
       {
-        file: pkg.module,
-        format: 'es',
-        // exports: 'named'
+        name: pkg.name,
+        file: pkg.browser,
+        format: 'umd',
+        globals: {
+          'easy-function': 'easyFunction'
+        }
       }
     ],
     plugins: [
       resolve(), // so Rollup can find `ms`
+      babel({ babelHelpers: 'bundled' }),
       commonjs() // so Rollup can convert `ms` to an ES module
-      // babel({ babelHelpers: 'bundled' })
     ]
   }
 ]

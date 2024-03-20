@@ -12,7 +12,7 @@
     "function"
   ],
   "main": "release/easy-function.js",
-  "module": "release/easy-function.esm.js",
+  "cjs": "release/easy-function.cjs.js",
   "browser": "release/easy-function.umd.js",
   "repositories": [
     {

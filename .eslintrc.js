@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     'semi': [1, 'never'], // 结尾的分号
     'space-in-parens': 1, // 函数参数之间的空格
-    'space-before-function-paren': 'always', // 函数参数前的空格
+    'space-before-function-paren': 1, // 函数参数前的空格
     'comma-spacing': 1, // 逗号后有一个空格
     'object-curly-spacing': 0,
     'no-unneeded-ternary': 0,
@@ -40,7 +40,7 @@ module.exports = {
       "classes": false,
       "variables": true,
       "allowNamedExports": false
-  }]
+    }]
   }
 }
 
