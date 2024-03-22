@@ -5,3 +5,5 @@ export { getRandom, randomString } from './tool/index.js'
 export { typeOf } from './core/index.js'
 export { sortArr, arrUniq } from './array/index.js'
 
+export * from './file'
+

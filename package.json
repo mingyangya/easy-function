@@ -23,7 +23,6 @@
   "scripts": {
     "test": "node --inspect test/index.js",
     "build": "rollup -c",
-    "release": "babel src/index.js --out-file release/easy-function.js",
     "example": "http-server -p 8888 -d false -o /example/index.html",
     "build:test": "jest"
   },
